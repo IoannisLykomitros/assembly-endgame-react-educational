@@ -1,10 +1,13 @@
+import Header from "./Header.jsx";
+import Status from "./Status.jsx";
 
-const App = () => {
+const AssemblyEndgame = () => {
   return (
     <main>
-      This is the App component.
+      <Header />
+      <Status />
     </main>   
   )
 }
 
-export default App
+export default AssemblyEndgame
