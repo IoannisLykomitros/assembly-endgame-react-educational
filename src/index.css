@@ -123,6 +123,7 @@ header > p {
   cursor: pointer;
 }
 
+
 button.new-game {
   font-family: "Hanken Grotesk", Arial, sans-serif;
   background-color: #11B5E5;
@@ -136,3 +137,14 @@ button.new-game {
   margin-inline: auto;
   cursor: pointer;
 }
+  
+.key-button.guessed-correct {
+  background-color: #10A95B;
+  color: #F9F4DA;
+}
+
+.key-button.guessed-wrong {
+  background-color: #E53E3E;
+  color: #F9F4DA;
+}
+

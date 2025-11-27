@@ -7,9 +7,14 @@ import Keyboard from "./Keyboard.jsx";
 const AssemblyEndgame = () => {
 
   const [currentWord, setCurrentWord] = useState('react');
+  const [guessedLetters, setGuessedLetters] = useState([]);
+
+  const wrongGuessCount = guessedLetters.filter(letter => !currentWord.includes(letter)).length;
+
+  console.log(wrongGuessCount);
 
   const letterElements = currentWord.split("").map((letter, index) => (
-    <span key={index} className="letter-box">{letter.toUpperCase()}</span>
+    <span key={index} className="letter-box">{guessedLetters.includes(letter) ? letter.toUpperCase() : ""}</span>
   ))
 
   return (
@@ -20,7 +25,7 @@ const AssemblyEndgame = () => {
       <section className="word-container">
         {letterElements}
       </section>
-      <Keyboard />
+      <Keyboard guessedLetters={guessedLetters} setGuessedLetters={setGuessedLetters} currentWord={currentWord} />
       <button className="new-game">New Game</button>
     </main>   
   )
