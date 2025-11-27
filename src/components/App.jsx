@@ -2,6 +2,7 @@ import { useState } from "react";
 import Header from "./Header.jsx";
 import Status from "./Status.jsx";
 import LanguageList from "./LanguageList.jsx";
+import Keyboard from "./Keyboard.jsx";
 
 const AssemblyEndgame = () => {
 
@@ -19,6 +20,8 @@ const AssemblyEndgame = () => {
       <section className="word-container">
         {letterElements}
       </section>
+      <Keyboard />
+      <button className="new-game">New Game</button>
     </main>   
   )
 }

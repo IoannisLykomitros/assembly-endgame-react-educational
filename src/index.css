@@ -14,6 +14,9 @@ body {
 }
 
 .header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
   margin-top: 76px;
   margin-bottom: 20px;
@@ -60,10 +63,10 @@ header > p {
 
 .language-list {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap; 
   gap: 2.5px;
-  justify-content: center;
-  max-width: 350px;
+  max-width: 450px;
 }
 
 .language-item {
@@ -90,4 +93,46 @@ header > p {
   font-size: 1.125rem;
   font-weight: 700;
   color: #F9F4DA;
+}
+
+.keyboard {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 64px;
+  max-width: 450px;
+  margin-bottom: 36px;
+}
+
+.key-button {
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+  display: flex;
+  border: 1px solid #D7D7D7;
+  border-radius: 4px;
+  gap: 8px;
+  margin-bottom: 6px;
+  height: 40px;
+  width: 40px;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  background-color: #FCBA29;
+  color: #1E1E1E;
+  cursor: pointer;
+}
+
+button.new-game {
+  font-family: "Hanken Grotesk", Arial, sans-serif;
+  background-color: #11B5E5;
+  border: 1px solid #D7D7D7;
+  font-weight: 600;
+  border-radius: 4px;
+  width: 225px;
+  height: 40px;
+  padding: 6px 12px;
+  display: block;
+  margin-inline: auto;
+  cursor: pointer;
 }
