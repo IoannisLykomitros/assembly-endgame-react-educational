@@ -21,7 +21,7 @@ const AssemblyEndgame = () => {
     <main>
       <Header />
       <Status />
-      <LanguageList />
+      <LanguageList wrongGuessCount={wrongGuessCount} />
       <section className="word-container">
         {letterElements}
       </section>
