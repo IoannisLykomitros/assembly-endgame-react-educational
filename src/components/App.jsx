@@ -5,6 +5,7 @@ import LanguageList from "./LanguageList.jsx";
 import Keyboard from "./Keyboard.jsx";
 import { languages } from "../languages.js";
 import { getFarewellText } from "../utils.js";
+import ReactConfetti from "react-confetti";
 
 const AssemblyEndgame = () => {
 
@@ -30,6 +31,7 @@ const AssemblyEndgame = () => {
 
   return (
     <main>
+      {isGameWon && <ReactConfetti />}
       <Header />
       <Status 
         isGameWon={isGameWon} 
