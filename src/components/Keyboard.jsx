@@ -19,6 +19,7 @@ const Keyboard = (props) => {
         
         return (
             <button
+                disabled={props.isGameOver}
                 className={clsx("key-button", {
                   "guessed-correct": isCorrect,
                   "guessed-wrong": isWrong

@@ -46,6 +46,7 @@ const AssemblyEndgame = () => {
         guessedLetters={guessedLetters} 
         setGuessedLetters={setGuessedLetters} 
         currentWord={currentWord} 
+        isGameOver={isGameOver}
       />
       {isGameOver && <button className="new-game">New Game</button>}
     </main>   

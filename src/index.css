@@ -166,6 +166,11 @@ header > p {
   cursor: pointer;
 }
 
+.key-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
 
 button.new-game {
   font-family: "Hanken Grotesk", Arial, sans-serif;
