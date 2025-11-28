@@ -4,12 +4,12 @@ import Status from "./Status.jsx";
 import LanguageList from "./LanguageList.jsx";
 import Keyboard from "./Keyboard.jsx";
 import { languages } from "../languages.js";
-import { getFarewellText } from "../utils.js";
+import { getFarewellText, getRandomWord } from "../utils.js";
 import ReactConfetti from "react-confetti";
 
 const AssemblyEndgame = () => {
 
-  const [currentWord, setCurrentWord] = useState('react');
+  const [currentWord, setCurrentWord] = useState(() => getRandomWord());
   const [guessedLetters, setGuessedLetters] = useState([]);
 
   const wrongGuessCount = guessedLetters.filter(letter => !currentWord.includes(letter)).length;
@@ -27,6 +27,11 @@ const AssemblyEndgame = () => {
 
   const getFarewellMessage = () => {
     return getFarewellText(languages[wrongGuessCount - 1].name);
+  }
+
+  const startNewGame = () => {
+    setCurrentWord(getRandomWord());
+    setGuessedLetters([]);
   }
 
   return (
@@ -50,7 +55,7 @@ const AssemblyEndgame = () => {
         currentWord={currentWord} 
         isGameOver={isGameOver}
       />
-      {isGameOver && <button className="new-game">New Game</button>}
+      {isGameOver && <button className="new-game" onClick={startNewGame}>New Game</button>}
     </main>   
   )
 }
