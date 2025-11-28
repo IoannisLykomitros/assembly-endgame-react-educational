@@ -9,8 +9,12 @@ body {
   color: #D9D9D9;
   padding: 20px;
   height: 100vh;
-  display: flex;
-  justify-content: center;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .header {
@@ -44,6 +48,8 @@ header > p {
   padding: 6px;
   border-radius: 4px;
   margin-block: 30px;
+  width: 100%;
+  max-width: 350px;
 }
 
 .status-container > h1 {
@@ -61,7 +67,7 @@ header > p {
 }
 
 .status-container.playing {
-  margin-bottom: 80px;
+  margin-bottom: 77px;
 }
 
 .status-container.won {
@@ -77,7 +83,7 @@ header > p {
   justify-content: center;
   flex-wrap: wrap; 
   gap: 2.5px;
-  max-width: 450px;
+  max-width: 350px;
 }
 
 .language-item {
