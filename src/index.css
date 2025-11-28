@@ -44,6 +44,7 @@ header > p {
 .status-container {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   padding: 6px;
   border-radius: 4px;
@@ -66,8 +67,18 @@ header > p {
   color: #F9F4DA;
 }
 
+.status-container > p.farewell-message {
+    font-style: italic;
+    font-weight: 400;
+}
+
+.status-container.farewell {
+    background-color: #7A5EA7;
+    border: 1px dashed #323232;
+}
+
 .status-container.playing {
-  margin-bottom: 77px;
+  margin-bottom: 85px;
 }
 
 .status-container.won {

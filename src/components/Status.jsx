@@ -1,7 +1,8 @@
 const Status = (props) => {
+
     return (
         <>  
-            {!props.isGameOver && <div className="status-container playing">
+            {!props.isGameOver && !props.isLastGuessIncorrect && <div className="status-container playing">
 
             </div>}
             {props.isGameWon && <div className="status-container won">
@@ -11,6 +12,9 @@ const Status = (props) => {
             {props.isGameLost && <div className="status-container lost">
                 <h1>Game Over!</h1>
                 <h2>You lose! Better start learning Assembly 😭</h2>
+            </div>}
+            {!props.isGameOver && props.isLastGuessIncorrect && <div className="status-container farewell">
+                <p className="farewell-message">{props.getFarewellText()}!</p>
             </div>}
         </>
     );
