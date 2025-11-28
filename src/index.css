@@ -125,7 +125,7 @@ header > p {
   margin-top: 36px;
 }
 
-.letter-box {
+.word-container > span {
   background-color: #323232;
   border-bottom: 1px solid #F9F4DA;
   width: 40px;
@@ -136,6 +136,10 @@ header > p {
   font-size: 1.125rem;
   font-weight: 700;
   color: #F9F4DA;
+}
+
+.word-container > span.missed-letter {
+    color: #EC5D49;
 }
 
 .keyboard {

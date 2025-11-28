@@ -6,6 +6,7 @@ import Keyboard from "./Keyboard.jsx";
 import { languages } from "../languages.js";
 import { getFarewellText, getRandomWord } from "../utils.js";
 import ReactConfetti from "react-confetti";
+import clsx from "clsx";
 
 const AssemblyEndgame = () => {
 
@@ -18,10 +19,17 @@ const AssemblyEndgame = () => {
   const isGameLost = wrongGuessCount >= languages.length - 1;
   const isGameOver = isGameWon || isGameLost;
 
-  const letterElements = currentWord.split("").map((letter, index) => (
-    <span key={index} className="letter-box">{guessedLetters.includes(letter) ? letter.toUpperCase() : ""}</span>
-  ))
-
+ const letterElements = currentWord.split("").map((letter, index) => {
+    const shouldRevealLetter = isGameLost || guessedLetters.includes(letter)
+    const letterClassName = clsx(
+        isGameLost && !guessedLetters.includes(letter) && "missed-letter"
+    )
+    return (
+        <span key={index} className={letterClassName}>
+            {shouldRevealLetter ? letter.toUpperCase() : ""}
+        </span>
+    )
+  })
   const lastGuessedLetter = guessedLetters[guessedLetters.length - 1]
   const isLastGuessIncorrect = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
 
