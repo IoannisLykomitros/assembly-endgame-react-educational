@@ -3,6 +3,7 @@ import Header from "./Header.jsx";
 import Status from "./Status.jsx";
 import LanguageList from "./LanguageList.jsx";
 import Keyboard from "./Keyboard.jsx";
+import { languages } from "../languages.js";
 
 const AssemblyEndgame = () => {
 
@@ -11,7 +12,9 @@ const AssemblyEndgame = () => {
 
   const wrongGuessCount = guessedLetters.filter(letter => !currentWord.includes(letter)).length;
 
-  console.log(wrongGuessCount);
+  const isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter));
+  const isGameLost = wrongGuessCount >= languages.length - 1;
+  const isGameOver = isGameWon || isGameLost;
 
   const letterElements = currentWord.split("").map((letter, index) => (
     <span key={index} className="letter-box">{guessedLetters.includes(letter) ? letter.toUpperCase() : ""}</span>
@@ -20,13 +23,21 @@ const AssemblyEndgame = () => {
   return (
     <main>
       <Header />
-      <Status />
+      <Status 
+        isGameWon={isGameWon} 
+        isGameLost={isGameLost}
+        isGameOver={isGameOver}
+      />
       <LanguageList wrongGuessCount={wrongGuessCount} />
       <section className="word-container">
         {letterElements}
       </section>
-      <Keyboard guessedLetters={guessedLetters} setGuessedLetters={setGuessedLetters} currentWord={currentWord} />
-      <button className="new-game">New Game</button>
+      <Keyboard 
+        guessedLetters={guessedLetters} 
+        setGuessedLetters={setGuessedLetters} 
+        currentWord={currentWord} 
+      />
+      {isGameOver && <button className="new-game">New Game</button>}
     </main>   
   )
 }
