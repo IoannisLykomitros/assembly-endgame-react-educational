@@ -4,7 +4,7 @@ import Status from "./Status.jsx";
 import LanguageList from "./LanguageList.jsx";
 import Keyboard from "./Keyboard.jsx";
 import { languages } from "../languages.ts";
-import { getFarewellText, getRandomWord } from "../utils.js";
+import { getFarewellText, getRandomWord } from "../utils";
 import ReactConfetti from "react-confetti";
 import clsx from "clsx";
 

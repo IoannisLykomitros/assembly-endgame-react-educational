@@ -1,11 +1,15 @@
-import {words} from "./words.ts";
+import {words} from "./words";
 
-export function getRandomWord() {
-    const randomIndex = Math.floor(Math.random() * words.length);
+const getRandomIndex = (array: string[]): number => {
+    return Math.floor(Math.random() * array.length);
+}
+
+export function getRandomWord(): string {
+    const randomIndex = getRandomIndex(words);
     return words[randomIndex];
 }
 
-export function getFarewellText(language) {
+export function getFarewellText(language: string): string {
     const options = [
         `Farewell, ${language}`,
         `Adios, ${language}`,
@@ -21,6 +25,6 @@ export function getFarewellText(language) {
         `${language} has left the building`
     ];
 
-    const randomIndex = Math.floor(Math.random() * options.length);
+    const randomIndex = getRandomIndex(options);
     return options[randomIndex];
 }
