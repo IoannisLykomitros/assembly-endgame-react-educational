@@ -193,10 +193,12 @@ button.new-game {
 .key-button.guessed-correct {
   background-color: #10A95B;
   color: #F9F4DA;
+  cursor: not-allowed;
 }
 
 .key-button.guessed-wrong {
   background-color: #E53E3E;
   color: #F9F4DA;
+  cursor: not-allowed;
 }
 
