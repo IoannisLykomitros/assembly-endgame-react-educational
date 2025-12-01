@@ -3,7 +3,7 @@ import Header from "./Header.jsx";
 import Status from "./Status.jsx";
 import LanguageList from "./LanguageList.jsx";
 import Keyboard from "./Keyboard.jsx";
-import { languages } from "../languages.js";
+import { languages } from "../languages.ts";
 import { getFarewellText, getRandomWord } from "../utils.js";
 import ReactConfetti from "react-confetti";
 import clsx from "clsx";
