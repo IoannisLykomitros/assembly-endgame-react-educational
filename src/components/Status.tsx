@@ -1,6 +1,15 @@
 import type { JSX } from "react";
 
-const Status = (props): JSX.Element => {
+type StatusProps = {
+    isGameWon: boolean;
+    isGameLost: boolean;
+    isGameOver: boolean;
+    isLastGuessIncorrect: boolean;
+    getFarewellText: () => string;
+}
+
+
+const Status = (props: StatusProps): JSX.Element => {
 
     return (
         <>  
