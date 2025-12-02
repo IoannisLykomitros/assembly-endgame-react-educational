@@ -1,7 +1,8 @@
+import type { JSX } from "react";
 import { languages } from "../languages";
 
-const LanguageList = (props) => {
 
+const LanguageList = (props): JSX.Element => {
     const isWrong = (index) => {
         return index < props.wrongGuessCount;
     }

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import type { JSX } from "react";
 import Header from "./Header";
 import Status from "./Status";
 import LanguageList from "./LanguageList";
@@ -8,7 +9,8 @@ import { getFarewellText, getRandomWord } from "../utils";
 import ReactConfetti from "react-confetti";
 import clsx from "clsx";
 
-const AssemblyEndgame = () => {
+
+const AssemblyEndgame = (): JSX.Element => {
 
   const [currentWord, setCurrentWord] = useState<string>(():string => getRandomWord());
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);

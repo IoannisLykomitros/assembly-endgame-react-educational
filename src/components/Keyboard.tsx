@@ -1,8 +1,9 @@
+import type { JSX } from "react";
 import clsx from "clsx";
 
 const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-const Keyboard = (props) => {
+const Keyboard = (props): JSX.Element => {
 
   const addGuessedLetter = (letter: string): void => {
     props.setGuessedLetters((prevLetters: string[]): string[] => 

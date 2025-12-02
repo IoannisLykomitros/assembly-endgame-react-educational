@@ -1,4 +1,6 @@
-const Status = (props) => {
+import type { JSX } from "react";
+
+const Status = (props): JSX.Element => {
 
     return (
         <>  
