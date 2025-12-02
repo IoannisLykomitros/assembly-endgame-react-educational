@@ -34,7 +34,7 @@ const AssemblyEndgame = (): JSX.Element => {
   })
 
   const lastGuessedLetter: string | undefined = guessedLetters[guessedLetters.length - 1]
-  const isLastGuessIncorrect: string | boolean = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
+  const isLastGuessIncorrect: boolean = !!lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
 
   const getFarewellMessage = (): string => {
     return getFarewellText(languages[wrongGuessCount - 1].name);

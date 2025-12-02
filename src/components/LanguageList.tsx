@@ -1,9 +1,12 @@
 import type { JSX } from "react";
 import { languages } from "../languages";
 
+type LanguageListProps = {
+    wrongGuessCount: number;
+}
 
-const LanguageList = (props): JSX.Element => {
-    const isWrong = (index) => {
+const LanguageList = (props: LanguageListProps): JSX.Element => {
+    const isWrong = (index: number): boolean => {
         return index < props.wrongGuessCount;
     }
 

@@ -3,7 +3,14 @@ import clsx from "clsx";
 
 const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
-const Keyboard = (props): JSX.Element => {
+type KeyboardProps = {
+  guessedLetters: string[];
+  setGuessedLetters: (letters: string[] | ((prevLetters: string[]) => string[])) => void;
+  currentWord: string;
+  isGameOver: boolean;
+}
+
+const Keyboard = (props: KeyboardProps): JSX.Element => {
 
   const addGuessedLetter = (letter: string): void => {
     props.setGuessedLetters((prevLetters: string[]): string[] => 
