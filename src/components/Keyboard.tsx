@@ -4,8 +4,8 @@ const alphabet = "abcdefghijklmnopqrstuvwxyz"
 
 const Keyboard = (props) => {
 
-  const addGuessedLetter = (letter) => {
-    props.setGuessedLetters(prevLetters => 
+  const addGuessedLetter = (letter: string): void => {
+    props.setGuessedLetters((prevLetters: string[]): string[] => 
       prevLetters.includes(letter) ? prevLetters : [...prevLetters, letter]
     );
   }
